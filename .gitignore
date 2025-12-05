@@ -1,0 +1,21 @@
+node_modules/
+dist/
+.vite/
+
+# Local env
+.env
+.env.*
+
+# Editor
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Vite cache
+.cache/
