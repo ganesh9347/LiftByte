@@ -27,8 +27,8 @@ export default function App() {
       <Route path="/" element={<HomeIdle />} />
       <Route path="/active" element={<ActiveHome />} />
       <Route path="/settings" element={<SettingsDashboard />} />
-      <Route path="/screen-sleep" element={<SetScreenSaver />} />
-      <Route path="/screensleeptimer" element={<ScreenSleepTimer />} />
+      <Route path="/screensaver" element={<SetScreenSaver />} />
+      <Route path="/screen-sleep" element={<ScreenSleepTimer />} />
       <Route path="/rgb-lighting" element={<RGBLightingControl />} />
       <Route path="/light-fan" element={<LightFanSettings />} />
       <Route path="/floor-password" element={<FloorPasswordSettings />}/>
