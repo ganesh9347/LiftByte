@@ -1,6 +1,7 @@
 import PageLayout from "../components/layout/PageLayout";
 import { ArrowUp, Bell } from "lucide-react";
 import ScreenSaver from "../assets/Screensaver.png";
+import { Palette, Globe, Settings } from "lucide-react";
 
 export default function HomeActive() {
   return (
@@ -45,30 +46,58 @@ export default function HomeActive() {
         </p>
 
         {/* ===== FLOOR GRID ===== */}
-        <div className="grid grid-cols-3 gap-x-20 gap-y-10 text-center mb-12">
-          {[
-            ["8", "Eighth Floor"],
-            ["7", "Seventh Floor"],
-            ["6", "Sixth Floor"],
-            ["5", "Fifth Floor"],
-            ["4", "Fourth Floor"],
-            ["3", "Third Floor", true],
-            ["2", "Second Floor"],
-            ["1", "First Floor"],
-            ["G", "Ground Floor"],
-          ].map(([floor, label, active], i) => (
-            <div key={i}>
-              <p
-                className={`text-5xl font-light ${
-                  active ? "text-green-500" : ""
-                }`}
-              >
-                {floor}
-              </p>
-              <p className="text-xs opacity-60">{label}</p>
+        <div className="w-full flex justify-center mb-10">
+    <div
+      className="
+       grid
+       grid-cols-3
+       gap-6
+       sm:gap-8
+       md:gap-10
+       lg:gap-10"
+      >
+    {[
+      ["8", "Eighth Floor"],
+      ["7", "Seventh Floor"],
+      ["6", "Sixth Floor"],
+      ["5", "Fifth Floor"],
+      ["4", "Fourth Floor"],
+      ["3", "Third Floor"],
+      ["2", "Second Floor"],
+      ["1", "First Floor"],
+      ["G", "Ground Floor"],
+    ].map(([floor, label], i) => (
+      <button
+        key={i}
+        className="
+          w-24 h-24
+          sm:w-28 sm:h-28
+          md:w-29 md:h-30
+          lg:w-24 lg:h-24
+
+          rounded-2xl 
+          bg-gradient-to-b from-white/10 to-white/5
+          border border-white/10
+
+          flex flex-col items-center justify-center
+          text-center
+
+          hover:bg-white/15
+          active:scale-95
+          transition
+        "
+        >
+         <span className="text-4xl md:text-5xl font-semibold">
+            {floor}
+          </span>
+          <span className="text-xs opacity-70 mt-1">
+             {label}
+           </span>
+          </button>
+         ))}
             </div>
-          ))}
         </div>
+       
 
         {/* ===== CONTROLS ===== */}
         <div className="flex items-center gap-20 mb-10">
@@ -82,11 +111,37 @@ export default function HomeActive() {
 
         {/* ===== QUICK ACTIONS ===== */}
         <div className="flex justify-center gap-12 text-xs opacity-70">
-          <span>Change Theme</span>
-          <span>Emergency</span>
-          <span>Language</span>
-          <span>Settings</span>
+            <button
+            onClick={() => navigate("/select-theme")}
+              className="hover:opacity-100 transition"
+              >
+                <Palette className="ml-6" size={20} />
+                <span>Change Theme</span>
+            </button>
+          <button
+              onClick={() => navigate("/emergency")}
+              className="hover:opacity-100 transition"
+            >
+               <Bell size={20} className="ml-4"/>
+               <span>Emergency</span>
+            </button>
+          <button
+              onClick={() => navigate("/language-region")}
+              className="hover:opacity-100 transition"
+              >
+                <Globe size={20} className="ml-4" />
+                <span>Language</span>
+           </button>
+
+          <button
+        onClick={() => navigate("/settings")}
+          className="hover:opacity-100 transition"
+         >
+            <Settings size={20} className="ml-2" />
+            <span>Settings</span>
+         </button>
         </div>
+        
       </div>
     </PageLayout>
   );

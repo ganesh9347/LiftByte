@@ -7,17 +7,17 @@ export default function BottomNav() {
   return (
     <div className="flex justify-between px-10 mt-14 pb-6">
       <NavItem
-        icon={<FiChevronLeft />}
+        icon={<FiChevronLeft size={17} />}
         label="Go Back"
         onClick={() => navigate(-1)}
       />
       <NavItem
-        icon={<FiHome />}
+        icon={<FiHome size={17} />}
         label="Go Home"
         onClick={() => navigate("/")}
       />
       <NavItem
-        icon={<FiLogOut />}
+        icon={<FiLogOut size={17} />}
         label="Logout"
         onClick={() => alert("Logout action")}
       />

@@ -16,6 +16,7 @@ import EmergencyOptions from "./pages/EmergencyOptions";
 import LanguageRegion from "./pages/LanguageRegion";
 import HomeActive from "./pages/ActiveHome";
 import HomeIdle from "./pages/HomeIdle";
+import NetworkBluetooth from "./pages/NetworkBlutooth";
 
 
 
@@ -26,7 +27,7 @@ export default function App() {
       <Route path="/" element={<HomeIdle />} />
       <Route path="/active" element={<ActiveHome />} />
       <Route path="/settings" element={<SettingsDashboard />} />
-      <Route path="/screensaver" element={<SetScreenSaver />} />
+      <Route path="/screen-sleep" element={<SetScreenSaver />} />
       <Route path="/screensleeptimer" element={<ScreenSleepTimer />} />
       <Route path="/rgb-lighting" element={<RGBLightingControl />} />
       <Route path="/light-fan" element={<LightFanSettings />} />
@@ -39,6 +40,7 @@ export default function App() {
       <Route path="/select-theme" element={<SelectTheme />} />
       <Route path="/emergency" element={<EmergencyOptions />} />
       <Route path="/language-region" element={<LanguageRegion />} />
+      <Route path="/network" element={<NetworkBluetooth />} />
     </Routes>
   );
 }
